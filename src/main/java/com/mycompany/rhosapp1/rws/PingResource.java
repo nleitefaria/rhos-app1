@@ -29,10 +29,8 @@ public class PingResource {
     @ApiOperation(value = "reverse", notes = "Reverse echo")
     public Response reverse(@ApiParam(value = "Reverse echo message") @PathParam("message") String message) {
         String reverse = pingControl.reverse(message);
-
         JsonBuilderFactory factory = Json.createBuilderFactory(null);
         JsonObject value = factory.createObjectBuilder().add("Reverse echo message", reverse).build();
-
         return Response.ok(value).build();
     }
 
@@ -42,10 +40,8 @@ public class PingResource {
     @ApiOperation(value = "echo", notes = "Echo")
     public Response echo(@ApiParam(value = "Echo message") @PathParam("message") String message) {
         String echo = pingControl.echo(message);
-
         JsonBuilderFactory factory = Json.createBuilderFactory(null);
         JsonObject value = factory.createObjectBuilder().add("Echo message", echo).build();
-
         return Response.ok(value).build();
     }
 
