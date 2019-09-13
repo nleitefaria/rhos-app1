@@ -28,7 +28,6 @@ public class PingResource {
     @Produces(MediaType.APPLICATION_JSON)
     @ApiOperation(value = "reverse", notes = "Reverse echo")
     public Response reverse(@ApiParam(value = "Reverse echo message") @PathParam("message") String message) {
-    	// Testing 
         String reverse = pingControl.reverse(message);
         JsonBuilderFactory factory = Json.createBuilderFactory(null);
         JsonObject value = factory.createObjectBuilder().add("Reverse echo message", reverse).build();
@@ -39,9 +38,19 @@ public class PingResource {
     @Path("/echo/{message}")
     @Produces(MediaType.APPLICATION_JSON)
     @ApiOperation(value = "echo", notes = "Echo")
-    public Response echo(@ApiParam(value = "Echo message") @PathParam("message") String message) {
-    	// Testing 
+    public Response echo(@ApiParam(value = "Echo message") @PathParam("message") String message) { 
         String echo = pingControl.echo(message);
+        JsonBuilderFactory factory = Json.createBuilderFactory(null);
+        JsonObject value = factory.createObjectBuilder().add("Echo message", echo).build();
+        return Response.ok(value).build();
+    }
+    
+    @GET
+    @Path("/echo/sayHiInFrench")
+    @Produces(MediaType.APPLICATION_JSON)
+    @ApiOperation(value = "sayHiInFrench", notes = "Echo")
+    public Response sayHiInFrench() {
+        String echo = "Salut";
         JsonBuilderFactory factory = Json.createBuilderFactory(null);
         JsonObject value = factory.createObjectBuilder().add("Echo message", echo).build();
         return Response.ok(value).build();
