@@ -48,7 +48,7 @@ public class PingResource {
     @GET
     @Path("/echo/sayHiInFrench")
     @Produces(MediaType.APPLICATION_JSON)
-    @ApiOperation(value = "sayHiInFrench", notes = "Echo")
+    @ApiOperation(value = "sayHiInFrench", notes = "Say hi in French")
     public Response sayHiInFrench() {
         String echo = "Salut";
         JsonBuilderFactory factory = Json.createBuilderFactory(null);
