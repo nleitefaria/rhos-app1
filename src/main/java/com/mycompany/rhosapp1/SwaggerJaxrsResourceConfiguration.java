@@ -4,6 +4,7 @@ import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 
 import com.mycompany.rhosapp1.rws.PingResource;
+import com.mycompany.rhosapp1.rws.ProductResource;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -23,5 +24,6 @@ public class SwaggerJaxrsResourceConfiguration extends Application {
 
     private void addRestResourceClasses(Set<Class<?>> resources) {
         resources.add(PingResource.class);
+        resources.add(ProductResource.class);
     }
 }
