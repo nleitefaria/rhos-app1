@@ -12,16 +12,16 @@ import javax.ws.rs.core.Response;
 import com.wordnik.swagger.annotations.Api;
 import com.wordnik.swagger.annotations.ApiOperation;
 
-@Path("/product")
-@Api(value = "/product", description = "Products service")
-public class ProductResource {
+@Path("/customer")
+@Api(value = "/customer", description = "Customers service")
+public class CustomerResource {
 	
 	@GET
     @Path("/all")
     @Produces(MediaType.APPLICATION_JSON)
-    @ApiOperation(value = "all", notes = "Get all products")
+    @ApiOperation(value = "all", notes = "Get all customers")
     public Response findAll() {
-        String echo = "Products";
+        String echo = "Customers";
         JsonBuilderFactory factory = Json.createBuilderFactory(null);
         JsonObject value = factory.createObjectBuilder().add("Echo message", echo).build();
         return Response.ok(value).build();
