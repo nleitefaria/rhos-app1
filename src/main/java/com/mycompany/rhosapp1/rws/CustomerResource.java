@@ -9,12 +9,24 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import com.mycompany.rhosapp1.service.CustomersService;
 import com.wordnik.swagger.annotations.Api;
 import com.wordnik.swagger.annotations.ApiOperation;
 
 @Path("/customer")
 @Api(value = "/customer", description = "Customers service")
 public class CustomerResource {
+	
+	@GET
+    @Path("/count")
+    @Produces(MediaType.APPLICATION_JSON)
+    @ApiOperation(value = "count", notes = "Get customers count")
+    public Response count() {
+		CustomersService customersService = new CustomersService();
+        JsonBuilderFactory factory = Json.createBuilderFactory(null);
+        JsonObject value = factory.createObjectBuilder().add("CustomersCount", customersService.count()).build();
+        return Response.ok(value).build();
+    }
 	
 	@GET
     @Path("/all")
