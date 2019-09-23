@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="RHOSAPP1PU" transaction-type="RESOURCE_LOCAL">
+	<!--     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider> -->
+	<provider>org.hibernate.ejb.HibernatePersistence</provider>
+    <class>com.mycompany.rhosapp1.entity.Invoices</class>
+    <class>com.mycompany.rhosapp1.entity.Customers</class>
+    <class>com.mycompany.rhosapp1.entity.InventoryTransactionTypes</class>
+    <class>com.mycompany.rhosapp1.entity.Shippers</class>
+    <class>com.mycompany.rhosapp1.entity.Employees</class>
+    <class>com.mycompany.rhosapp1.entity.Suppliers</class>
+    <class>com.mycompany.rhosapp1.entity.OrdersTaxStatus</class>
+    <class>com.mycompany.rhosapp1.entity.PurchaseOrderStatus</class>
+    <class>com.mycompany.rhosapp1.entity.OrderDetailsStatus</class>
+    <class>com.mycompany.rhosapp1.entity.Strings</class>
+    <class>com.mycompany.rhosapp1.entity.SalesReports</class>
+    <class>com.mycompany.rhosapp1.entity.InventoryTransactions</class>
+    <class>com.mycompany.rhosapp1.entity.OrdersStatus</class>
+    <class>com.mycompany.rhosapp1.entity.PurchaseOrderDetails</class>
+    <class>com.mycompany.rhosapp1.entity.Privileges</class>
+    <class>com.mycompany.rhosapp1.entity.Orders</class>
+    <class>com.mycompany.rhosapp1.entity.Products</class>
+    <class>com.mycompany.rhosapp1.entity.PurchaseOrders</class>
+    <class>com.mycompany.rhosapp1.entity.OrderDetails</class>
+    <properties>
+      <!--
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/RGugodRvIK?zeroDateTimeBehavior=convertToNull"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.password" value="Isep126$"/>
+      -->
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://remotemysql.com:3306/RGugodRvIK?zeroDateTimeBehavior=convertToNull"/>
+      <property name="javax.persistence.jdbc.user" value="RGugodRvIK"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.password" value="SpR0gJeNIk"/>
+    </properties>
+  </persistence-unit>
+</persistence>
