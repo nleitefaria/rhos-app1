@@ -24,7 +24,7 @@ public class CustomerResource {
     public Response count() {
 		CustomersService customersService = new CustomersService();
         JsonBuilderFactory factory = Json.createBuilderFactory(null);
-        JsonObject value = factory.createObjectBuilder().add("CustomersCount", customersService.count()).build();
+        JsonObject value = factory.createObjectBuilder().add("count", customersService.count()).build();
         return Response.ok(value).build();
     }
 	
@@ -33,10 +33,8 @@ public class CustomerResource {
     @Produces(MediaType.APPLICATION_JSON)
     @ApiOperation(value = "all", notes = "Get all customers")
     public Response findAll() {
-        String echo = "Customers";
-        JsonBuilderFactory factory = Json.createBuilderFactory(null);
-        JsonObject value = factory.createObjectBuilder().add("Echo message", echo).build();
-        return Response.ok(value).build();
+		CustomersService customersService = new CustomersService();
+        return Response.status(200).entity(customersService.findAll()).build();
     }
 
 }
