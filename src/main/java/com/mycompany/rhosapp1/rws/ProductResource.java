@@ -9,6 +9,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import com.mycompany.rhosapp1.service.ProductsService;
 import com.wordnik.swagger.annotations.Api;
 import com.wordnik.swagger.annotations.ApiOperation;
 
@@ -17,14 +18,23 @@ import com.wordnik.swagger.annotations.ApiOperation;
 public class ProductResource {
 	
 	@GET
+    @Path("/count")
+    @Produces(MediaType.APPLICATION_JSON)
+    @ApiOperation(value = "count", notes = "Get products count")
+    public Response count() {
+		ProductsService service = new ProductsService();
+        JsonBuilderFactory factory = Json.createBuilderFactory(null);
+        JsonObject value = factory.createObjectBuilder().add("count", service.count()).build();
+        return Response.ok(value).build();
+    }
+	
+	@GET
     @Path("/all")
     @Produces(MediaType.APPLICATION_JSON)
     @ApiOperation(value = "all", notes = "Get all products")
     public Response findAll() {
-        String echo = "Products";
-        JsonBuilderFactory factory = Json.createBuilderFactory(null);
-        JsonObject value = factory.createObjectBuilder().add("Echo message", echo).build();
-        return Response.ok(value).build();
+		ProductsService service = new ProductsService();
+        return Response.status(200).entity(service.findAll()).build();
     }
 
 }
