@@ -9,7 +9,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import com.mycompany.rhosapp1.service.CustomersService;
+import com.mycompany.rhosapp1.service.impl.CustomersServiceImpl;
 import com.wordnik.swagger.annotations.Api;
 import com.wordnik.swagger.annotations.ApiOperation;
 
@@ -22,7 +22,7 @@ public class CustomerResource {
     @Produces(MediaType.APPLICATION_JSON)
     @ApiOperation(value = "count", notes = "Get customers count")
     public Response count() {
-		CustomersService customersService = new CustomersService();
+		CustomersServiceImpl customersService = new CustomersServiceImpl();
         JsonBuilderFactory factory = Json.createBuilderFactory(null);
         JsonObject value = factory.createObjectBuilder().add("count", customersService.count()).build();
         return Response.ok(value).build();
@@ -33,7 +33,7 @@ public class CustomerResource {
     @Produces(MediaType.APPLICATION_JSON)
     @ApiOperation(value = "all", notes = "Get all customers")
     public Response findAll() {
-		CustomersService customersService = new CustomersService();
+		CustomersServiceImpl customersService = new CustomersServiceImpl();
         return Response.status(200).entity(customersService.findAll()).build();
     }
 
