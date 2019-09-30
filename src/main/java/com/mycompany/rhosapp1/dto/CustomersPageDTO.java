@@ -4,7 +4,7 @@ import java.util.List;
 
 public class CustomersPageDTO {
 	
-	private List<CustomersDTO> productsPage;
+	private List<CustomersDTO> customersPage;
 	private int total;
 	
 	public CustomersPageDTO() {
@@ -13,16 +13,16 @@ public class CustomersPageDTO {
 
 	public CustomersPageDTO(List<CustomersDTO> productsPage, int total) {
 		super();
-		this.productsPage = productsPage;
+		this.customersPage = productsPage;
 		this.total = total;
 	}
 
-	public List<CustomersDTO> getProductsPage() {
-		return productsPage;
+	public List<CustomersDTO> getCustomersPage() {
+		return customersPage;
 	}
 
-	public void setProductsPage(List<CustomersDTO> productsPage) {
-		this.productsPage = productsPage;
+	public void setCustomersPage(List<CustomersDTO> customersPage) {
+		this.customersPage = customersPage;
 	}
 
 	public int getTotal() {
@@ -31,5 +31,5 @@ public class CustomersPageDTO {
 
 	public void setTotal(int total) {
 		this.total = total;
-	}
+	}	
 }
