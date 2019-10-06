@@ -38,5 +38,4 @@ public class CustomerResource {
 		CustomersServiceImpl service = new CustomersServiceImpl();
 		return Response.status(200).entity(service.findPage(pageNum)).build();
 	}
-
 }
