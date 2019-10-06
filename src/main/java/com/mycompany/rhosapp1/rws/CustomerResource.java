@@ -11,7 +11,6 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import com.mycompany.rhosapp1.service.impl.CustomersServiceImpl;
-import com.mycompany.rhosapp1.service.impl.ProductsServiceImpl;
 import com.wordnik.swagger.annotations.Api;
 import com.wordnik.swagger.annotations.ApiOperation;
 
@@ -28,15 +27,6 @@ public class CustomerResource {
         JsonBuilderFactory factory = Json.createBuilderFactory(null);
         JsonObject value = factory.createObjectBuilder().add("count", service.count()).build();
         return Response.ok(value).build();
-    }
-	
-	@GET
-    @Path("/all")
-    @Produces(MediaType.APPLICATION_JSON)
-    @ApiOperation(value = "all", notes = "Get all customers")
-    public Response findAll() {
-		CustomersServiceImpl service = new CustomersServiceImpl();
-        return Response.status(200).entity(service.findAll()).build();
     }
 	
 	@GET
