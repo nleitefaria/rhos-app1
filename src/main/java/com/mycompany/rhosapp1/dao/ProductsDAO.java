@@ -16,6 +16,7 @@ import java.util.List;
 import com.mycompany.rhosapp1.entity.PurchaseOrderDetails;
 import com.mycompany.rhosapp1.entity.InventoryTransactions;
 import com.mycompany.rhosapp1.entity.Products;
+import com.mycompany.rhosapp1.EMF;
 import com.mycompany.rhosapp1.dao.exceptions.IllegalOrphanException;
 import com.mycompany.rhosapp1.dao.exceptions.NonexistentEntityException;
 import javax.persistence.EntityManager;
@@ -28,12 +29,13 @@ import javax.persistence.EntityManagerFactory;
 public class ProductsDAO implements Serializable {
 
     public ProductsDAO(EntityManagerFactory emf) {
-        this.emf = emf;
+        //this.emf = emf;
     }
-    private EntityManagerFactory emf = null;
+    //private EntityManagerFactory emf = null;
 
     public EntityManager getEntityManager() {
-        return emf.createEntityManager();
+        //return emf.createEntityManager();
+        return EMF.get().createEntityManager();
     }
 
     public void create(Products products) {

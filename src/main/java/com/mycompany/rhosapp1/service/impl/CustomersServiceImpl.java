@@ -20,8 +20,8 @@ public class CustomersServiceImpl implements CustomersService{
 	
 	public CustomersServiceImpl()
 	{
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("RHOSAPP1PU");
-		this.dao = new CustomersDAO(emf);
+		//EntityManagerFactory emf = Persistence.createEntityManagerFactory("RHOSAPP1PU");
+		this.dao = new CustomersDAO(null);
 	}
 	
 	public Integer count()

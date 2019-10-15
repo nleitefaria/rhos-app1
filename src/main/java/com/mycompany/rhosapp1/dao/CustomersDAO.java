@@ -12,6 +12,7 @@ import javax.persistence.EntityNotFoundException;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import com.mycompany.rhosapp1.entity.Orders;
+import com.mycompany.rhosapp1.EMF;
 import com.mycompany.rhosapp1.dao.exceptions.NonexistentEntityException;
 import java.util.ArrayList;
 import java.util.List;
@@ -25,12 +26,13 @@ import javax.persistence.EntityManagerFactory;
 public class CustomersDAO implements Serializable {
 
     public CustomersDAO(EntityManagerFactory emf) {
-        this.emf = emf;
+        //this.emf = emf;
     }
-    private EntityManagerFactory emf = null;
+    //private EntityManagerFactory emf = null;
 
     public EntityManager getEntityManager() {
-        return emf.createEntityManager();
+        //return emf.createEntityManager();
+    	return EMF.get().createEntityManager();
     }
 
     public void create(Customers customers) {

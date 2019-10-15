@@ -33,6 +33,8 @@
       <property name="javax.persistence.jdbc.user" value="RGugodRvIK"/>
       <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
       <property name="javax.persistence.jdbc.password" value="SpR0gJeNIk"/>
+      
+      <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
     </properties>
   </persistence-unit>
 </persistence>
