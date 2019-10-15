@@ -11,17 +11,14 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import com.mycompany.rhosapp1.service.impl.CustomersServiceImpl;
-import com.wordnik.swagger.annotations.Api;
-import com.wordnik.swagger.annotations.ApiOperation;
+
 
 @Path("/customer")
-@Api(value = "/customer", description = "Customers service")
 public class CustomerResource {
 	
 	@GET
     @Path("/count")
     @Produces(MediaType.APPLICATION_JSON)
-    @ApiOperation(value = "count", notes = "Get customers count")
     public Response count() {
 		CustomersServiceImpl service = new CustomersServiceImpl();
         JsonBuilderFactory factory = Json.createBuilderFactory(null);
@@ -32,7 +29,6 @@ public class CustomerResource {
 	@GET
 	@Path("/all/{pageNum}")
 	@Produces({MediaType.APPLICATION_JSON})
-	@ApiOperation(value = "all pagination", notes = "Get all customers with pagination")
 	public Response findCustomersPage(@PathParam("pageNum") Integer pageNum)
 	{
 		CustomersServiceImpl service = new CustomersServiceImpl();
