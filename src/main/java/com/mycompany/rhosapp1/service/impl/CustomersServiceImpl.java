@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Stateless;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 
 import com.mycompany.rhosapp1.dao.CustomersDAO;
 import com.mycompany.rhosapp1.dto.CustomersDTO;
@@ -20,8 +18,7 @@ public class CustomersServiceImpl implements CustomersService{
 	
 	public CustomersServiceImpl()
 	{
-		//EntityManagerFactory emf = Persistence.createEntityManagerFactory("RHOSAPP1PU");
-		this.dao = new CustomersDAO(null);
+		this.dao = new CustomersDAO();
 	}
 	
 	public Integer count()
