@@ -20,8 +20,7 @@ public class ProductsServiceImpl implements ProductsService {
 	
 	public ProductsServiceImpl()
 	{
-		//EntityManagerFactory emf = Persistence.createEntityManagerFactory("RHOSAPP1PU");
-		this.dao = new ProductsDAO(null);
+		this.dao = new ProductsDAO();
 	}
 	
 	public Integer count()

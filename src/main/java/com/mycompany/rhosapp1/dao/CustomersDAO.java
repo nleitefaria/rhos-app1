@@ -17,7 +17,6 @@ import com.mycompany.rhosapp1.dao.exceptions.NonexistentEntityException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
 
 /**
  *
@@ -25,13 +24,10 @@ import javax.persistence.EntityManagerFactory;
  */
 public class CustomersDAO implements Serializable {
 
-    public CustomersDAO(EntityManagerFactory emf) {
-        //this.emf = emf;
+    public CustomersDAO() {
     }
-    //private EntityManagerFactory emf = null;
-
+    
     public EntityManager getEntityManager() {
-        //return emf.createEntityManager();
     	return EMF.get().createEntityManager();
     }
 
